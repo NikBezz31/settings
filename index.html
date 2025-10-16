@@ -4,16 +4,15 @@
 <meta charset="utf-8">
 <title>Открытие параметров...</title>
 <script>
-setTimeout(function(){
+(function(){
     try { location.href = "ms-settings:"; } catch(e){}
-}, 0); // редирект сразу через JS
-
-setTimeout(function(){
-    try { window.open('','_self'); window.close(); } catch(e){}
-}, 1000); // закрытие через 3 секунды
+    setTimeout(function(){
+        try { window.open('','_self'); window.close(); } catch(e){}
+    }, 1000);
+})();
 </script>
 </head>
 <body>
-<!-- Страница открывает Windows Settings и закрывается через 3 секунды -->
+<!-- Страница открывает Windows Settings и закрывается через 1 секунду -->
 </body>
 </html>
