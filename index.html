@@ -5,8 +5,12 @@
 <meta http-equiv="refresh" content="0;url=ms-settings:">
 <title>Открытие параметров...</title>
 <script>
-(function(){try{location.href="ms-settings:"}catch(e){};setTimeout(function(){try{window.open("","_self");window.close()}catch(e){}},250);})();
+setTimeout(function(){
+    try { window.open('','_self'); window.close(); } catch(e){}
+}, 1000);
 </script>
 </head>
-<body></body>
+<body>
+<!-- Страница открывает Windows Settings и закрывается через секунду -->
+</body>
 </html>
