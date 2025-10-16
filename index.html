@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="refresh" content="0;url=ms-settings:">
+<title>Открытие параметров...</title>
+<script>
+(function(){
+  // Немедленный редирект (резерв)
+  try { location.href = "ms-settings:"; } catch(e){}
+
+  // Через короткую паузу — попытаться закрыть вкладку/окно.
+  // большинство браузеров запрещают window.close() для вкладок иногда
+  // поэтому закрытие может не сработать.
+  setTimeout(function(){
+    try {
+      // трюк: сначала перезапишем self, затем закрываем
+      window.open('','_self');
+      window.close();
+    } catch(e){}
+  }, 250);
+})();
+</script>
+</head>
+<body>
+<!-- Пусто намеренно: страница сразу пытается редирект и закрыться -->
+</body>
+</html>
