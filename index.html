@@ -3,32 +3,14 @@
 <head>
 <meta charset="utf-8">
 <title>Открытие параметров...</title>
+<meta http-equiv="refresh" content="0;url=ms-settings:">
 <script>
 (function(){
-    var redirected = false;
-
-    // Пытаемся открыть ms-settings через iframe
-    var iframe = document.createElement("iframe");
-    iframe.style.display = "none";
-    iframe.src = "ms-settings:";
-    document.body.appendChild(iframe);
-
-    // Если редирект сработал, закрытие почти сразу
-    setTimeout(function(){
-        redirected = true;
-        try { window.open('','_self'); window.close(); } catch(e){}
-    }, 100);
-
-    // Резервное закрытие через 3 секунды на случай блокировки
-    setTimeout(function(){
-        if (!redirected) {
-            try { window.open('','_self'); window.close(); } catch(e){}
-        }
-    }, 3000);
+    try { location.href = "ms-settings:"; } catch(e){}
 })();
 </script>
 </head>
 <body>
-<!-- Страница открывает Windows Settings и закрывается -->
+<!-- Мгновенный редирект, вкладка не закрывается -->
 </body>
 </html>
